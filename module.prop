@@ -1,0 +1,7 @@
+id=Universal_Kernel_Tweaks
+name=Universal Kernel Tweaks
+version=v1.2
+versionCode=1
+author=enweazudaniel @xda-developers.com
+description= Universal Tweaks tweaks automatically adjusts governor parameters to save battery using schedutil and interactive governors
+minMagisk=1900
