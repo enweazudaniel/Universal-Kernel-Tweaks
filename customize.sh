@@ -1,4 +1,3 @@
-##########################################################################################
 #
 # MMT Extended Config Script
 #
@@ -14,7 +13,6 @@
 #MINAPI=27
 #MAXAPI=28
 #DYNLIB=true
-DEBUG=true
 
 ##########################################################################################
 # Replace list
@@ -25,7 +23,6 @@ DEBUG=true
 
 # Construct your list in the following format
 # This is an example
-REPLACE_EXAMPLE="
 /system/app/Youtube
 /system/priv-app/SystemUI
 /system/priv-app/Settings
@@ -33,7 +30,6 @@ REPLACE_EXAMPLE="
 "
 
 # Construct your own list here
-REPLACE="
 "
 
 ##########################################################################################
@@ -42,19 +38,19 @@ REPLACE="
 
 set_permissions() {
   bin=xbin
-  if [ ! -d $SYS/xbin ]; then
+  if [ ! -d "$SYS"/xbin ]; then
     bin=bin
-    mkdir $MODPATH/system/$bin
-    mv $MODPATH/system/xbin/Universal_Tweaks $MODPATH/system/$bin
-    rm -rf $MODPATH/system/xbin/*
-    rmdir $MODPATH/system/xbin
+    mkdir "$MODPATH"/system/$bin
+    mv "$MODPATH"/system/xbin/Universal_Tweaks $MODPATH/system/$bin
+    rm -rf "$MODPATH"/system/xbin/*
+    rmdir "$MODPATH"/system/xbin
   else
-    rm -rf $MODPATH/system/bin/*
-    rmdir $MODPATH/system/bin
+    rm -rf "$MODPATH"/system/bin/*
+    rmdir "$MODPATH"/system/bin
   fi
-  set_perm_recursive $MODPATH 0 0 0755 0644
-  set_perm_recursive $MODPATH/system/$bin 0 0 0755 0777
-  set_perm $MODPATH/service.sh 0 0 0777
+  set_perm_recursive "$MODPATH" 0 0 0755 0644
+  set_perm_recursive "$MODPATH"/system/$bin 0 0 0755 0777
+  set_perm "$MODPATH"/service.sh 0 0 0777
    # Remove this if adding to this function
 
   # Note that all files/folders in magisk module directory have the $MODPATH prefix - keep this prefix on all of your files/folders
@@ -77,6 +73,5 @@ set_permissions() {
 # MMT Extended Logic - Don't modify anything after this
 ##########################################################################################
 
-SKIPUNZIP=1
-unzip -qjo "$ZIPFILE" 'common/functions.sh' -d $TMPDIR >&2
-. $TMPDIR/functions.sh
+unzip -qjo "$ZIPFILE" 'common/functions.sh' -d "$TMPDIR" >&2
+. "$TMPDIR"/functions.sh
