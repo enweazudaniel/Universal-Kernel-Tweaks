@@ -1,3 +1,4 @@
+#!/bin/bash
 if [ -e "/data/Universal_Kernel_Tweaks.prop" ]; then
     rm -f "/data/Universal_Kernel_Tweaks.prop"
 fi
